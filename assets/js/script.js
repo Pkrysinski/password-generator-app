@@ -19,7 +19,7 @@ function writePassword() {
 
 function getPasswordLength(){
   passwordLength = parseInt(window.prompt("Enter a numeric password length between 8 and 132 characters!"));
-  
+
   // This IF/ELSE statement is to get the length of the password the user wants.
   // If shorter than 8, notify of invalid choice and prompt to try again.
   if (passwordLength < 8){
@@ -64,6 +64,7 @@ function getPasswordCharTypes(){
   // Prompt yes/no for special characters
   specialYN = window.confirm("Would you like special characters?");
 
+  // Need to make sure at least one character type has been selected before moving on
   if (lowercaseYN == false && uppercaseYN == false && numericYN == false && specialYN == false){
     tryAgain = window.confirm("At least one character type must be selected.  Retry character type selection?");
     if (tryAgain){
