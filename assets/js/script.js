@@ -6,7 +6,6 @@ var uppercaseYN;
 var numericYN;
 var specialYN;
 var passwordLength;
-var tryAgain;
 
 // Write password to the #password input
 function writePassword() {
@@ -20,38 +19,40 @@ function writePassword() {
 function getPasswordLength(){
   passwordLength = parseInt(window.prompt("Enter a numeric password length between 8 and 132 characters!"));
 
-  // This IF/ELSE statement is to get the length of the password the user wants.
-  // If shorter than 8, notify of invalid choice and prompt to try again.
-  if (passwordLength < 8){
-    tryAgain = window.confirm("Password length too short.  Try again?");
-    if (tryAgain){
-      generatePassword();
-    } else {
-      return;
-    }
-  // If longer than 132, notify of invalid choice and prompt to try again.
-  } else if (passwordLength > 132) {
-    tryAgain = window.confirm("Password length too long.  Try again?");
-    if (tryAgain){
-      generatePassword();
-    } else {
-      return;
-    }    
   // If length entered is NaN ("not a number)", notify of invalid choice and prompt to try again.)
-  } else if (Number.isNaN(passwordLength)) {
-    tryAgain = window.confirm("Password length invalid, must be a number.  Try again?");
+  if (Number.isNaN(passwordLength)) {
+    var tryAgain = window.confirm("Password length invalid, must be a number.  Try again?");
     if (tryAgain){
       generatePassword();
     } else {
       return;
     }    
-  }
-    else {
-    console.log("Password length: " + passwordLength);
-  }
-}
+  } else if (passwordLength < 8){
+      var tryAgain = window.confirm("Password length too short.  Try again?");
+      if (tryAgain){
+        generatePassword();
+      } else {
+        return;
+      }
+    // If longer than 132, notify of invalid choice and prompt to try again.
+    } else if (passwordLength > 132) {
+      var tryAgain = window.confirm("Password length too long.  Try again?");
+      if (tryAgain){
+        generatePassword();
+      } else {
+        return;
+      }    
+    //Otherwise, continue on to getPasswordCharTypes function!
+    } 
+      else {
+      console.log("Password length: " + passwordLength);
+      getPasswordCharTypes();
+    };
+
+};
 
 function getPasswordCharTypes(){
+
   // Prompt yes/no for lowercase
   lowercaseYN = window.confirm("Would you like lowercase characters?");
 
@@ -66,7 +67,7 @@ function getPasswordCharTypes(){
 
   // Need to make sure at least one character type has been selected before moving on
   if (lowercaseYN == false && uppercaseYN == false && numericYN == false && specialYN == false){
-    tryAgain = window.confirm("At least one character type must be selected.  Retry character type selection?");
+    var tryAgain = window.confirm("At least one character type must be selected.  Retry character type selection?");
     if (tryAgain){
       getPasswordCharTypes();
     } else {
@@ -75,12 +76,12 @@ function getPasswordCharTypes(){
   }
 
   return;
-}
+};
 
 function generatePassword(){
 
   getPasswordLength();
-  getPasswordCharTypes();
+
 
     // Now that we have all our criteria, we need to actually build the password.
 
