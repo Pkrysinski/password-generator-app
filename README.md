@@ -1,5 +1,7 @@
 # password-generator-app
 
+The purpose of this weeks' challenge is to try to have us complete the starter code for a password generator application.  The application must utilize JavaScript logic to prompt the user for various password criteria options, handle scenarios where invalid choices are given (according to our business logic), and handle control flow throughout the whole process.  The application must be responsive, error-free, and meet all the below acceptence criteria.
+
 ## Acceptence Criteria Notes
 
 GIVEN I need a new, secure password...
