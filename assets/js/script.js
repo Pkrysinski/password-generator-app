@@ -10,8 +10,8 @@ var numericChars;
 var specialYN;
 var specialChars;
 var passwordLength;
-var charSet;
-var retVal;
+var characterSet;
+var returnVal;
 
 // Write password to the #password input
 function writePassword() {
@@ -105,17 +105,17 @@ function getPasswordCharTypes(){
 };
 
 function buildPassword() {
-      length = passwordLength;
-      charSet = "";
-      retVal = "";
+  length = passwordLength;
+  characterSet = "";
+  returnVal = "";
 
-      charSet = lowerCaseChars + upperCaseChars + numericChars + specialChars;
+  charSet = lowerCaseChars + upperCaseChars + numericChars + specialChars;
 
   for (var i = 0, n = charSet.length; i < length; ++i) {
-      retVal += charSet.charAt(Math.floor(Math.random() * n));
+    returnVal = returnVal + charSet.charAt(Math.floor(Math.random() * n));
   }
 
-  return retVal;
+  return returnVal;
 }
 
 function generatePassword(){
@@ -123,7 +123,7 @@ function generatePassword(){
   getPasswordLength();
   buildPassword();
 
-  return retVal;
+  return returnVal;
 
 };
 
