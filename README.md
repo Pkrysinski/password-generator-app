@@ -41,7 +41,9 @@ THEN my input should be validated and at least one character type should be sele
 - - - - -
 WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria
+>Password is appropriately gathering the range of criteria that the user is prompted for and concatenating to the list of available characters from which the buildPassword() function will be able to select from..
 
 - - - - -
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
+>This part is already pretty much done, just had to hook it up with the result of the generatePassword() function.  We just need to make sure the returnVal is sent back to the writePassword() function so that it can be then query selected for the correct element on the UI.

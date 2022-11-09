@@ -115,7 +115,6 @@ function buildPassword() {
     returnVal = returnVal + charSet.charAt(Math.floor(Math.random() * n));
   }
 
-  return returnVal;
 }
 
 function generatePassword(){
