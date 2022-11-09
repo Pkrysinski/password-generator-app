@@ -22,6 +22,7 @@ function writePassword() {
 
 }
 
+// This function is strictly to get the length of the password the user wants, with some error handling for too short/long of input.
 function getPasswordLength(){
   passwordLength = parseInt(window.prompt("Enter a numeric password length between 8 and 132 characters!"));
 
@@ -57,6 +58,7 @@ function getPasswordLength(){
 
 };
 
+// This function is to prompt the user for lowercase, uppercase, numeric, and special character inclusion in the generated password
 function getPasswordCharTypes(){
 
   // Prompt yes/no for lowercase
@@ -104,6 +106,8 @@ function getPasswordCharTypes(){
   return;
 };
 
+// This function takes the result of passwordLength(), plus the selections of criteria from user prompts, and builds 
+// a character pool from which the Math.random() will choose to pick from to build the password.
 function buildPassword() {
   length = passwordLength;
   characterSet = "";
@@ -117,6 +121,7 @@ function buildPassword() {
 
 }
 
+// This is the generic function that is called from the writePassword() function, as a result of the event listener (button click).
 function generatePassword(){
 
   getPasswordLength();

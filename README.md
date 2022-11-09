@@ -47,3 +47,10 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 >This part is already pretty much done, just had to hook it up with the result of the generatePassword() function.  We just need to make sure the returnVal is sent back to the writePassword() function so that it can be then query selected for the correct element on the UI.
+
+- - - - -
+TODO...
+>Add comments to CSS file.
+>Commit all code.
+>One more full unit test to ensure no errors.
+>Post links to challenge to BootCampSpot and submit assignment.
