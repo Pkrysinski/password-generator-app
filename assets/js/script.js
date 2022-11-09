@@ -2,10 +2,16 @@
 var generateBtn = document.querySelector("#generate");
 // Making the below variables global so they can be referenced by multiple fuctions
 var lowercaseYN;
+var lowerCaseChars;
 var uppercaseYN;
+var upperCaseChars;
 var numericYN;
+var numericChars;
 var specialYN;
+var specialChars;
 var passwordLength;
+var charSet;
+var retVal;
 
 // Write password to the #password input
 function writePassword() {
@@ -54,16 +60,36 @@ function getPasswordLength(){
 function getPasswordCharTypes(){
 
   // Prompt yes/no for lowercase
-  lowercaseYN = window.confirm("Would you like lowercase characters?");
+  lowercaseYN = window.confirm("Would you like lowercase characters? \n(Okay for yes, Cancel for no)");
+  if (lowercaseYN) {
+    lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
+  } else {
+    lowerCaseChars = "";
+  }
 
   // Prompt yes/no for uppercase
-  uppercaseYN = window.confirm("Would you like uppercase characters?");
+  uppercaseYN = window.confirm("Would you like uppercase characters? \n(Okay for yes, Cancel for no)");
+  if (uppercaseYN) {
+    upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  } else {
+    upperCaseChars = "";
+  }  
 
   // Prompt yes/no for numeric values
-  numericYN = window.confirm("Would you like numeric values?");
+  numericYN = window.confirm("Would you like numeric values? \n(Okay for yes, Cancel for no)");
+  if (numericYN) {
+    numericChars = "0123456789";
+  } else {
+    numericChars = "";
+  }  
 
   // Prompt yes/no for special characters
-  specialYN = window.confirm("Would you like special characters?");
+  specialYN = window.confirm("Would you like special characters? \n(Okay for yes, Cancel for no)");
+  if (specialYN) {
+    specialChars = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+  } else {
+    specialChars = "";
+  }  
 
   // Need to make sure at least one character type has been selected before moving on
   if (lowercaseYN == false && uppercaseYN == false && numericYN == false && specialYN == false){
@@ -78,12 +104,26 @@ function getPasswordCharTypes(){
   return;
 };
 
+function buildPassword() {
+      length = passwordLength;
+      charSet = "";
+      retVal = "";
+
+      charSet = lowerCaseChars + upperCaseChars + numericChars + specialChars;
+
+  for (var i = 0, n = charSet.length; i < length; ++i) {
+      retVal += charSet.charAt(Math.floor(Math.random() * n));
+  }
+
+  return retVal;
+}
+
 function generatePassword(){
 
   getPasswordLength();
+  buildPassword();
 
-
-    // Now that we have all our criteria, we need to actually build the password.
+  return retVal;
 
 };
 
