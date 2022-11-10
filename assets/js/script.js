@@ -112,10 +112,10 @@ function buildPassword() {
   characterSet = "";
   returnVal = "";
 
-  charSet = lowerCaseChars + upperCaseChars + numericChars + specialChars;
+  characterSet = lowerCaseChars + upperCaseChars + numericChars + specialChars;
 
-  for (var i = 0, n = charSet.length; i < length; ++i) {
-    returnVal = returnVal + charSet.charAt(Math.floor(Math.random() * n));
+  for (var i = 0, n = characterSet.length; i < length; ++i) {
+    returnVal = returnVal + characterSet.charAt(Math.floor(Math.random() * n));
   }
 
 }
