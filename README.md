@@ -50,7 +50,4 @@ THEN the password is either displayed in an alert or written to the page
 
 - - - - -
 TODO...
->Add comments to CSS file.
->Commit all code.
->One more full unit test to ensure no errors.
->Post links to challenge to BootCampSpot and submit assignment.
+>Nothing! (I hope)
