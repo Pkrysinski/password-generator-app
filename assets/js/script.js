@@ -52,7 +52,6 @@ function getPasswordLength(){
     //Otherwise, continue on to getPasswordCharTypes function!
     } 
       else {
-      console.log("Password length: " + passwordLength);
       getPasswordCharTypes();
     };
 
