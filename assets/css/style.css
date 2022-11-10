@@ -1,9 +1,11 @@
+/* This sets a border-box to all elements on the webpage */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* This sets the height of the HTML, <body> and .wrapper class to all have a height of 100%, with no margin or padding */
 html,
 body,
 .wrapper {
@@ -12,17 +14,20 @@ body,
   padding: 0;
 }
 
+/* This sets the font-family to everything in the <body> tag, as well as the background color */
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
 }
 
+/* This adds padding to HTML elements associated with the .wrapper class */
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
+/* This aligns the header content in the center, with a little bit of padding and a font color of grey */
 header {
   text-align: center;
   padding: 20px;
@@ -30,6 +35,7 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* This sets various cosmetic properties of elements associated with the .card class */
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -42,6 +48,7 @@ header {
   padding: 30px 40px;
 }
 
+/* This sets what comes after the .card-header class */
 .card-header::after {
   content: " ";
   display: block;
@@ -50,14 +57,17 @@ header {
   height: 2px;
 }
 
+/* This sets a min-height of the .card-body class elements to 100px */
 .card-body {
   min-height: 100px;
 }
 
+/* This sets the content in the center of .card-footer class elements */
 .card-footer {
   text-align: center;
 }
 
+/* This sets what comes before the .card-footer class */
 .card-footer::before {
   content: " ";
   display: block;
@@ -66,12 +76,14 @@ header {
   height: 2px;
 }
 
+/* This sets what comes after the .card-footer class */
 .card-footer::after {
   content: " ";
   display: block;
   clear: both;
 }
 
+/* This sets various cosmetic properties of elements associated with the .btn class */
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -88,15 +100,18 @@ header {
   cursor: pointer;
 }
 
+/* This sets the properties of the button when it's disabled */
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
 }
 
+/* This makes every element associated with the .float-right class to be floated to the right */
 .float-right {
   float: right;
 }
 
+/* This sets various cosmetic properties of elements associated with the .password ID element */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -118,6 +133,7 @@ button[disabled] {
   overflow: hidden;
 }
 
+/* Below are all media-query attributes for when the browser window is resized */
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
