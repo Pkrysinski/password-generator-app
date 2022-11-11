@@ -24,7 +24,7 @@ function writePassword() {
 
 // This function is strictly to get the length of the password the user wants, with some error handling for too short/long of input.
 function getPasswordLength(){
-  passwordLength = parseInt(window.prompt("Enter a numeric password length between 8 and 132 characters!"));
+  passwordLength = parseInt(window.prompt("Enter a numeric password length between 8 and 128 characters!"));
 
   // If length entered is NaN ("not a number)", notify of invalid choice and prompt to try again.)
   if (Number.isNaN(passwordLength)) {
@@ -42,7 +42,7 @@ function getPasswordLength(){
         return;
       }
     // If longer than 132, notify of invalid choice and prompt to try again.
-    } else if (passwordLength > 132) {
+    } else if (passwordLength > 128) {
       var tryAgain = window.confirm("Password length too long.  Try again?");
       if (tryAgain){
         generatePassword();
